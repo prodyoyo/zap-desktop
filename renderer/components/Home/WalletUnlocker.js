@@ -1,9 +1,16 @@
+// @ts-ignore
 import React from 'react'
+// @ts-ignore
 import PropTypes from 'prop-types'
+// @ts-ignore
 import { FormattedMessage, injectIntl } from 'react-intl'
+// @ts-ignore
 import { withRouter } from 'react-router-dom'
+// @ts-ignore
 import { intlShape } from '@zap/i18n'
+// @ts-ignore
 import { Button } from 'components/UI'
+// @ts-ignore
 import { Form, PasswordInput } from 'components/Form'
 import WalletHeader from './WalletHeader'
 import messages from './messages'
@@ -25,6 +32,7 @@ class WalletUnlocker extends React.Component {
     wallet: PropTypes.object.isRequired,
   }
 
+  // @ts-ignore
   componentDidUpdate(prevProps) {
     const {
       wallet,
@@ -32,6 +40,7 @@ class WalletUnlocker extends React.Component {
       history,
       setUnlockWalletError,
       unlockWalletError,
+    // @ts-ignore
     } = this.props
 
     // Set the form error if we got an error unlocking.
@@ -50,11 +59,14 @@ class WalletUnlocker extends React.Component {
     }
   }
 
+  // @ts-ignore
   setFormApi = formApi => {
     this.formApi = formApi
   }
 
+  // @ts-ignore
   onSubmit = values => {
+    // @ts-ignore
     const { unlockWallet } = this.props
     unlockWallet(values.password)
   }
@@ -70,6 +82,7 @@ class WalletUnlocker extends React.Component {
       wallet,
       staticContext,
       ...rest
+    // @ts-ignore
     } = this.props
     return (
       <Form
@@ -78,7 +91,9 @@ class WalletUnlocker extends React.Component {
         onSubmit={this.onSubmit}
         {...rest}
       >
-        {({ formState }) => (
+        {({ 
+// @ts-ignore
+        formState }) => (
           <>
             <WalletHeader wallet={wallet} />
 
